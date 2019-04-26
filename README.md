@@ -11,6 +11,16 @@
 * Web Apllication: Item Catalog
 * URL: http://165.227.144.54/
 
+## Summary of Software
+* apache2
+* libapache2-mod-wsgi-py3
+* postgresql
+* python
+* virtualenv
+* pip
+* flask
+* sqlalchemy
+
 
 ## Configure Linux server
 
@@ -106,10 +116,19 @@ sudo -u postgres createdb catalog
 sudo -u catalog psql
 ```
 ## Deploy a Flask Application
-#### install nginx
+### install apache2
 ```
-sudo apt-get install nginx
-sudo rm /etc/nginx/sites-enabled/default
+sudo apt install apache2
+```
+### install libapache2-mod-wsgi for python3
+```
+sudo apt-get install libapache2-mod-wsgi-py3
+```
+
+## enable mod_wsgi
+```
+sudo a2enmod wsgi
+systemctl restart apache2 
 ```
 
 #### install git 
@@ -132,6 +151,8 @@ sudo virtualenv venv
 source venv/bin/activate
 
 ```
+
+
 #### install packges
 ##### in local virtualenv 
 ```
@@ -142,9 +163,10 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
-#### install gunicorn 
-```
-pip install gunicorn
-gunicorn -w 3 run:app
-```
 
+## References
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+https://hostpresto.com/community/tutorials/deploy-flask-applications-with-gunicorn-and-nginx-on-ubuntu-14-04/
+http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
