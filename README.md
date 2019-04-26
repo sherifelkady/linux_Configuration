@@ -4,7 +4,7 @@
 #### a baseline installation of a Linux server and prepare it to host your web applications.
 
 ## Server Details
-* Public IP : 165.227.144.54
+* Public IP : Server ip
 * Server OS : Ubuntu 19.04 x64 
 * SSH Port: 2200
 * Server Provider: DigitalOcean
