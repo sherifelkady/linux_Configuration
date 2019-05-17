@@ -9,7 +9,6 @@
 * SSH Port: 2200
 * Server Provider: DigitalOcean
 * Web Apllication: Item Catalog
-* URL: http://165.227.144.54/
 
 ## Summary of Software
 * apache2
